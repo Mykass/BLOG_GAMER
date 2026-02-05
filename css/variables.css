@@ -1,0 +1,16 @@
+:root {
+  --bg-primary: #050510;
+  --bg-secondary: #0b0f1a;
+  --bg-glass: rgba(10, 15, 30, 0.7);
+  --neon-blue: #00f3ff;
+  --neon-pink: #ff00ff;
+  --neon-purple: #bc13fe;
+  --neon-green: #0aff0a;
+  --text-primary: #e0e6ed;
+  --text-muted: #9aa4bf;
+  --grid-color: rgba(0, 243, 255, 0.05);
+
+  --radius: 4px; /* Sharper edges for cyberpunk feel */
+  --blur: blur(16px);
+  --glow: 0 0 10px rgba(0, 243, 255, 0.5);
+}

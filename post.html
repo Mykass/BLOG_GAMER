@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post | MykasGames</title>
+
+  <meta name="description" content="Notícia gamer completa - MykasGames" />
+
+  <!-- CSS (IGUAL AO INDEX) -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="icon" href="assets/favicon.ico" />
+</head>
+
+<body data-page="post">
+
+  <!-- HEADER (IDÊNTICO AO INDEX) -->
+  <header class="site-header">
+    <div class="container header-content">
+      <a href="index.html" style="text-decoration: none; color: inherit;">
+        <h1 class="logo">MYKASGAMES</h1>
+      </a>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">News</a></li>
+          <li><a href="tips.html">Game Tips</a></li>
+          <li><a href="consoles.html">Consoles&PC</a></li>
+          <li><a href="qa.html">Q&amp;A</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container main-layout">
+
+    <!-- CONTEÚDO DO POST -->
+    <section class="posts-section">
+      <article id="post-container" class="featured-post">
+        <!-- Conteúdo injetado via JS -->
+      </article>
+    </section>
+
+    <!-- SIDEBAR (REUTILIZADA) -->
+    <aside class="sidebar">
+
+      <section class="sidebar-block">
+        <h3>Newsletter</h3>
+        <form id="newsletter-form" class="newsletter-form">
+          <input type="email" placeholder="Your email..." required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </section>
+
+      <section class="sidebar-block">
+        <h3>Topics</h3>
+        <div class="topics">
+          <span data-category="news">News</span>
+          <span data-category="game-tips">Game Tips</span>
+          <span data-category="consoles">Consoles</span>
+          <span data-category="hardware">Hardware</span>
+        </div>
+      </section>
+
+    </aside>
+
+  </main>
+
+  <!-- FOOTER (IDÊNTICO AO INDEX) -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+
+      <div class="footer-links">
+        <a href="https://github.com/Mykass" target="_blank" class="social-link">
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/mykael-davi-lacerda-055766366/" target="_blank" class="social-link">
+          LinkedIn
+        </a>
+      </div>
+
+      <a href="https://github.com/Mykass" target="_blank" class="author">
+        <img src="assets/images/profile.jpg" alt="Mykael Davi" />
+        <div>
+          <strong>Mykael “Mykass” Davi</strong>
+          <span>Frontend Developer</span>
+        </div>
+      </a>
+
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/post.js"></script>
+
+</body>
+</html>

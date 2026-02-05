@@ -1,0 +1,932 @@
+.logo {
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.27), text-shadow 0.3s ease;
+  display: inline-block;
+  /* Required for transform */
+}
+
+.logo:hover {
+  transform: scale(1.07);
+  text-shadow: 0 0 20px rgba(60, 242, 255, 0.5);
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.main-nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+  color: var(--neon-blue);
+  text-shadow: 0 0 8px var(--neon-blue);
+}
+
+.posts-section h2 {
+  margin-bottom: 16px;
+}
+
+.featured-post {
+  padding: 24px;
+  background: var(--bg-glass);
+  border: 1px solid rgba(60, 242, 255, 0.1);
+  border-radius: var(--radius);
+  margin-bottom: 24px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-post::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--neon-purple);
+  box-shadow: 0 0 10px var(--neon-purple);
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* Post Card Updates */
+.post-card {
+  padding: 0;
+  /* Reset padding for image layout */
+  background: var(--bg-glass);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius);
+  overflow: hidden;
+  /* For image corners */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 12px rgba(60, 242, 255, 0.2);
+  border-color: var(--neon-blue);
+}
+
+.post-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.post-content {
+  padding: 16px;
+}
+
+.post-content time {
+  font-size: 0.85rem;
+  color: var(--neon-blue);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.post-content h4 {
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+/* Sidebar Updates */
+.sidebar {
+  background: var(--bg-glass);
+  padding: 24px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+  align-self: start;
+}
+
+.sidebar-block+.sidebar-block {
+  margin-top: 32px;
+}
+
+.trending-list,
+.classsidebar_about ul {
+  list-style: none;
+}
+
+.trending-list li,
+.classsidebar_about ul li {
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 16px;
+}
+
+.trending-list li:last-child,
+.classsidebar_about ul li:last-child {
+  border-bottom: none;
+}
+
+.trending-list a {
+  text-decoration: none;
+  color: var(--text-primary);
+  display: block;
+}
+
+.trending-list a:hover strong {
+  color: var(--neon-blue);
+}
+
+.trending-list span {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Newsletter Form */
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.newsletter-form input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  font-family: inherit;
+}
+
+.newsletter-form button {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: var(--neon-blue);
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.newsletter-form button:hover {
+  opacity: 1;
+  box-shadow: 0 0 15px var(--neon-blue);
+  transform: scale(1.02);
+}
+
+/* Topics */
+.topics span {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 6px 4px 0 0;
+  border-radius: 12px;
+  background: rgba(60, 242, 255, 0.1);
+  color: var(--neon-blue);
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+}
+
+.topics span:hover,
+.topics span.active {
+  background: rgba(60, 242, 255, 0.2);
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 12px rgba(60, 242, 255, 0.2);
+}
+
+/* Footer Updates */
+.site-footer .author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.site-footer img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid var(--neon-blue);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.social-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  /* Tech-like button */
+  background: rgba(255, 255, 255, 0.02);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.social-link:hover {
+  color: #000;
+  background: var(--neon-blue);
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 10px var(--neon-blue);
+  font-weight: bold;
+}
+
+/* ABOUT PAGE – TECH STACK CARDS */
+
+body[data-page="about"] .posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+body[data-page="about"] .post-card {
+  background: linear-gradient(180deg, #161616, #101010);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 1.5rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+body[data-page="about"] .post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
+}
+
+body[data-page="about"] .post-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: var(--accent);
+  letter-spacing: 0.4px;
+}
+
+body[data-page="about"] .post-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   POSTS GRID – LISTAGEM DE NOTÍCIAS (CORREÇÃO 1)
+   ========================================================= */
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 32px;
+  margin-top: 32px;
+}
+
+/* Card padrão */
+.post-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.01)
+  );
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+/* Link ocupa todo o card */
+.post-link {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Imagem do card */
+.post-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Conteúdo do card */
+.post-content {
+  padding: 20px 22px 24px;
+}
+
+/* Data */
+.post-content time {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Título */
+.post-content h4 {
+  font-size: 1.05rem;
+  line-height: 1.35;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+
+/* Resumo */
+.post-content p {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+/* =========================================================
+   DESTAQUE PRINCIPAL (mantém o que já existia)
+   ========================================================= */
+
+.featured-post {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
+  border-radius: 18px;
+  padding: 32px 36px;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.featured-post::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
+  border-radius: 4px;
+}
+
+.featured-post time {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.featured-post h1,
+.featured-post h3 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin: 12px 0 0;
+  color: var(--text-primary);
+}
+
+/* =========================================================
+   PÁGINA DE POST (CORREÇÃO 2 – ESTILO EDITORIAL)
+   ========================================================= */
+
+body[data-page="post"] .featured-post {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 48px 52px;
+}
+
+body[data-page="post"] .featured-post time {
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+}
+
+body[data-page="post"] .featured-post h1,
+body[data-page="post"] .featured-post h1,
+body[data-page="post"] .featured-post h3 {
+  font-size: 2.2rem;
+  line-height: 1.25;
+  margin: 8px 0 28px;
+}
+
+/* Imagem do post */
+body[data-page="post"] .featured-post img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  margin: 32px 0;
+  border-radius: 14px;
+}
+
+/* Texto longo */
+body[data-page="post"] .featured-post p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-primary);
+  margin-bottom: 22px;
+}
+
+/* =========================================================
+   SIDEBAR (mantida – apenas refinamento visual)
+   ========================================================= */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.sidebar .widget {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.sidebar .widget h3 {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+/* ========================================
+   RESPONSIVO - MEDIA QUERIES COMPLETAS
+   ======================================== */
+
+/* Tablets (768px e menores) */
+@media (max-width: 768px) {
+  /* Logo e Navegação */
+  .logo {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+  }
+
+  .main-nav ul {
+    gap: 12px;
+    font-size: 0.9rem;
+  }
+
+  /* Posts Grid */
+  .posts-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Featured Post */
+  .featured-post {
+    padding: 20px 24px;
+    margin-bottom: 24px;
+  }
+
+  .featured-post h1 {
+    font-size: 1.6rem;
+  }
+
+  .featured-post h2 {
+    font-size: 1.3rem;
+  }
+
+  /* Post Card */
+  .post-card img {
+    height: 140px;
+  }
+
+  .post-content {
+    padding: 12px;
+  }
+
+  .post-content time {
+    font-size: 0.75rem;
+  }
+
+  .post-content h4 {
+    font-size: 0.95rem;
+  }
+
+  .post-content p {
+    font-size: 0.85rem;
+  }
+
+  /* Footer */
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .site-footer .author {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .site-footer img {
+    width: 48px;
+    height: 48px;
+  }
+
+  /* Post Page */
+  body[data-page="post"] .featured-post {
+    padding: 24px 16px;
+  }
+
+  body[data-page="post"] .featured-post h1 {
+    font-size: 1.5rem;
+    margin: 8px 0 16px;
+  }
+
+  body[data-page="post"] .featured-post p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  body[data-page="post"] .featured-post img {
+    margin: 16px 0;
+    max-height: 280px;
+  }
+
+  /* About Page */
+  body[data-page="about"] .posts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+  }
+
+  body[data-page="about"] .post-card {
+    padding: 1rem;
+  }
+
+  body[data-page="about"] .post-card h4 {
+    font-size: 0.95rem;
+  }
+
+  body[data-page="about"] .post-card p {
+    font-size: 0.85rem;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    gap: 20px;
+  }
+
+  .sidebar .widget {
+    padding: 16px;
+  }
+
+  .sidebar .widget h3 {
+    font-size: 0.95rem;
+  }
+
+  /* Newsletter Form */
+  .newsletter-form input,
+  .newsletter-form button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  /* Topics */
+  .topics span {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+    margin: 4px 2px 0 0;
+  }
+
+  /* Trending List */
+  .trending-list li,
+  .classsidebar_about ul li {
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+  }
+
+  .trending-list span {
+    font-size: 0.75rem;
+  }
+
+  .trending-list a {
+    font-size: 0.9rem;
+  }
+}
+
+/* Celulares pequenos (480px e menores) */
+@media (max-width: 480px) {
+  /* Logo */
+  .logo {
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+  }
+
+  /* Navegação */
+  .main-nav ul {
+    gap: 8px;
+    font-size: 0.75rem;
+  }
+
+  .main-nav a {
+    padding: 4px;
+  }
+
+  /* Header */
+  .site-header {
+    padding: 12px 0;
+  }
+
+  .header-content {
+    padding: 0 12px;
+  }
+
+  /* Posts Grid */
+  .posts-grid {
+    gap: 12px;
+  }
+
+  /* Featured Post */
+  .featured-post {
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+
+  .featured-post h1 {
+    font-size: 1.3rem;
+    line-height: 1.2;
+  }
+
+  .featured-post h2 {
+    font-size: 1.1rem;
+  }
+
+  .featured-post::before {
+    width: 3px;
+  }
+
+  /* Post Card */
+  .post-card img {
+    height: 120px;
+  }
+
+  .post-content {
+    padding: 10px;
+  }
+
+  .post-content time {
+    font-size: 0.7rem;
+    margin-bottom: 4px;
+  }
+
+  .post-content h4 {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+  }
+
+  .post-content p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    gap: 16px;
+  }
+
+  .sidebar .widget {
+    padding: 12px;
+  }
+
+  .sidebar .widget h3 {
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+  }
+
+  .trending-list li,
+  .classsidebar_about ul li {
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+  }
+
+  .trending-list a {
+    font-size: 0.8rem;
+  }
+
+  .trending-list span {
+    font-size: 0.7rem;
+  }
+
+  /* Newsletter Form */
+  .newsletter-form {
+    gap: 10px;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button {
+    padding: 8px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+  }
+
+  /* Social Links */
+  .social-link {
+    font-size: 0.75rem;
+    gap: 4px;
+    padding: 6px 8px;
+    letter-spacing: 0.5px;
+  }
+
+  /* Topics */
+  .topics span {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    margin: 2px 1px 0 0;
+  }
+
+  /* Footer */
+  .footer-content {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .site-footer .author {
+    width: 100%;
+  }
+
+  .site-footer img {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Post Page */
+  body[data-page="post"] .featured-post {
+    padding: 16px 12px;
+  }
+
+  body[data-page="post"] .featured-post h1 {
+    font-size: 1.25rem;
+    margin: 6px 0 12px;
+  }
+
+  body[data-page="post"] .featured-post p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  body[data-page="post"] .featured-post img {
+    margin: 12px 0;
+    max-height: 220px;
+    border-radius: 8px;
+  }
+
+  /* About Page */
+  body[data-page="about"] .posts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 10px;
+  }
+
+  body[data-page="about"] .post-card {
+    padding: 0.8rem;
+  }
+
+  body[data-page="about"] .post-card h4 {
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem;
+  }
+
+  body[data-page="about"] .post-card p {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+}
+
+/* Telas muito pequenas (320px) */
+@media (max-width: 320px) {
+  .logo {
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+  }
+
+  .main-nav ul {
+    gap: 4px;
+    font-size: 0.65rem;
+  }
+
+  .main-nav a {
+    padding: 2px;
+  }
+
+  .featured-post {
+    padding: 12px;
+  }
+
+  .featured-post h1 {
+    font-size: 1.1rem;
+  }
+
+  .post-card img {
+    height: 100px;
+  }
+
+  .post-content {
+    padding: 8px;
+  }
+
+  .post-content time {
+    font-size: 0.65rem;
+  }
+
+  .post-content h4 {
+    font-size: 0.75rem;
+  }
+
+  .post-content p {
+    font-size: 0.7rem;
+  }
+
+  .sidebar .widget {
+    padding: 10px;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button {
+    padding: 6px;
+    font-size: 0.7rem;
+  }
+
+  .social-link {
+    font-size: 0.65rem;
+    padding: 4px 6px;
+  }
+
+  body[data-page="post"] .featured-post {
+    padding: 12px 8px;
+  }
+
+  body[data-page="post"] .featured-post h1 {
+    font-size: 1rem;
+  }
+
+  body[data-page="post"] .featured-post p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Landscape mode em celulares */
+@media (max-width: 768px) and (orientation: landscape) {
+  .featured-post {
+    padding: 16px;
+  }
+
+  .featured-post h1 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+
+  body[data-page="post"] .featured-post {
+    padding: 16px;
+  }
+
+  body[data-page="post"] .featured-post img {
+    max-height: 240px;
+    margin: 12px 0;
+  }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Q&amp;A | MykasGames</title>
+
+  <meta name="description" content="Perguntas e respostas sobre jogos, consoles e tecnologia gamer." />
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+
+<body data-page="qa">
+
+  <header class="site-header">
+    <div class="container header-content">
+      <a href="index.html" style="text-decoration: none; color: inherit;">
+        <h1 class="logo">MYKASGAMES</h1>
+      </a>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">News</a></li>
+          <li><a href="tips.html">Game Tips</a></li>
+          <li><a href="consoles.html">Consoles&PC</a></li>
+          <li><a class="active" href="qa.html">Q&amp;A</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-layout">
+
+    <section class="posts-section">
+      <header class="section-header">
+        <h2>Questions & Answers</h2>
+      </header>
+
+      <article class="featured-post">
+        <h3>"Como o ray tracing impacta o desempenho em jogos modernos?"</h3>
+      </article>
+
+      <div class="posts-grid">
+        <!-- Posts will be injected here by JS -->
+      </div>
+    </section>
+
+    <aside class="sidebar">
+
+      <section class="sidebar-block">
+        <h3>Trending Now</h3>
+        <ul id="trending-list" class="trending-list">
+          <!-- Trending items injected by JS -->
+        </ul>
+      </section>
+
+      <section class="sidebar-block">
+        <h3>Newsletter</h3>
+        <p style="margin-bottom: 12px; font-size: 0.9rem; color: var(--text-muted);">
+          Get the latest gaming news delivered to your inbox.
+        </p>
+        <form id="newsletter-form" class="newsletter-form">
+          <input type="email" placeholder="Your email..." required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </section>
+
+      <section class="sidebar-block">
+        <h3>Topics</h3>
+        <div class="topics">
+          <span>Performance</span>
+          <span>Hardware</span>
+          <span>Consoles</span>
+        </div>
+      </section>
+
+    </aside>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-links">
+        <a href="https://github.com/Mykass" target="_blank" class="social-link">
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/mykael-davi-lacerda-055766366/" target="_blank" class="social-link">
+          LinkedIn
+        </a>
+      </div>
+
+      <a href="https://github.com/Mykass" target="_blank" class="author">
+        <img src="assets/images/profile.jpg" alt="Mykael Davi" />
+        <div>
+          <strong>Mykael “Mykass” Davi</strong>
+          <span>Frontend Developer</span>
+        </div>
+      </a>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+
+</body>
+
+</html>

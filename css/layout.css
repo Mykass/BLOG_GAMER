@@ -1,0 +1,169 @@
+@view-transition {
+  navigation: auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  background-color: var(--bg-primary);
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px),
+    radial-gradient(circle at top center, #1b2a4e 0%, #050510 80%);
+  background-size: 50px 50px, 50px 50px, 100% 100%;
+  background-position: center top;
+  background-attachment: scroll;
+  color: var(--text-primary);
+  animation: fadeIn 0.5s ease-out;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Ensuring a clean font */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.site-header {
+  background: var(--bg-glass);
+  backdrop-filter: var(--blur);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(60, 242, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-layout {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 32px;
+  margin-top: 80px;
+}
+
+.site-footer {
+  margin-top: 64px;
+  background: var(--bg-glass);
+  backdrop-filter: var(--blur);
+}
+
+/* ========================================
+   RESPONSIVO - MEDIA QUERIES
+   ======================================== */
+
+/* Tablets (768px e menores) */
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .main-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .main-nav a {
+    font-size: 0.9rem;
+  }
+
+  .main-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .site-footer {
+    margin-top: 48px;
+  }
+}
+
+/* Celulares pequenos (480px e menores) */
+@media (max-width: 480px) {
+  body {
+    background-size: 30px 30px, 30px 30px, 100% 100%;
+  }
+
+  .container {
+    padding: 12px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+
+  .header-content {
+    gap: 12px;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .main-nav a {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .main-layout {
+    gap: 16px;
+  }
+}
+
+/* Telas muito pequenas (320px) */
+@media (max-width: 320px) {
+  .container {
+    padding: 8px;
+  }
+
+  .logo {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+  }
+
+  .main-nav ul {
+    gap: 4px;
+  }
+
+  .main-nav a {
+    font-size: 0.75rem;
+  }
+}
+
+/* Desktop grande (1200px+) */
+@media (min-width: 1200px) {
+  .container {
+    padding: 32px;
+  }
+
+  .main-layout {
+    gap: 48px;
+  }
+}
