@@ -18,7 +18,7 @@ export function renderPosts(posts) {
       : "";
 
     article.innerHTML = `
-      <a href="/post.html?id=${encodeURIComponent(post.id)}" class="post-link">
+      <a href="post.html?id=${encodeURIComponent(post.id)}" class="post-link">
         ${imageHtml}
         <div class="post-content">
           <time datetime="${post.date}">${post.date}</time>

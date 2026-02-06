@@ -6,7 +6,7 @@ initNavigation();
 const page = document.body.dataset.page;
 
 // páginas que DEVEM carregar posts dinâmicos
-const postPages = ["news", "game-tips", "consoles", "qa"];
+const postPages = ["news", "tips", "consoles", "qa"];
 
 if (postPages.includes(page)) {
   loadInitialPosts();

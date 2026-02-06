@@ -9,8 +9,13 @@ export async function fetchPosts(filters = {}) {
     url += `?category=eq.${filters.category}`;
   }
 
-  const res = await fetch(url);
-  return res.json();
+const res = await fetch(url);
+if (!res.ok) {
+  throw new Error(`API error: ${res.status}`);
+}
+
+return res.json();
+
 }
 
 // Busca post individual
