@@ -14,10 +14,11 @@ export async function loadInitialPosts() {
 
 // Filtros da sidebar
 export function initSidebarFilters() {
-  const buttons = document.querySelectorAll(".topic-btn");
+  // Seleciona elementos que declaram `data-category` dentro de .topics
+  const buttons = document.querySelectorAll('.topics [data-category]');
 
   buttons.forEach(btn => {
-    btn.addEventListener("click", async () => {
+    btn.addEventListener('click', async () => {
       const category = btn.dataset.category;
       const posts = await fetchPosts({ category });
       renderPosts(posts);

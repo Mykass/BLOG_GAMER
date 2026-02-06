@@ -1,6 +1,6 @@
 import { fetchPostById } from "./api.js";
 
-document.addEventListener("DOMContentLoaded", async () => {
+export async function init() {
   const container = document.getElementById("post-container");
 
   if (!container) {
@@ -43,4 +43,4 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("Erro ao carregar post:", error);
     container.innerHTML = "<p>Erro ao carregar o post.</p>";
   }
-});
+}
